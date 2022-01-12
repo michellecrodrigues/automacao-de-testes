@@ -1,0 +1,14 @@
+{
+  "name": "teste-cypress",
+  "version": "1.0.0",
+  "description": "Projeto de automação de testes para Luizalabs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Michelle Passos",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^9.2.1"
+  }
+}
