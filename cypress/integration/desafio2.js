@@ -21,7 +21,8 @@ context('desafio2_api', () => {
             expect(response.body.eye_color).to.eq("yellow")
             expect(response.body.birth_year).to.eq("112BBY")
             expect(response.body.gender).to.eq("n/a")
-            expect(response.body.homeworld).to.eq("https://swapi.dev/api/planets/1/") 
+            expect(response.body.homeworld).to.eq("https://swapi.dev/api/planets/1/")
+            expect(response.body.films).to.be.not.null
            
         })
 
