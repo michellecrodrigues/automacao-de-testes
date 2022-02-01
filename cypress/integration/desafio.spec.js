@@ -1,18 +1,19 @@
 
 describe('Home Page', ()=>{
+
     it('Vistando a página principal', ()=>{
         cy.viewport(1440,900)
         cy.visit('https://maratona-discover-devfinance.netlify.app/#.')
     })
 
-describe('Transacao', ()=>{
+
     it('Adicionar uma nova transacao', ()=>{
         cy.get('[class="button new"]').click()
         cy.get('#form h2').should('have.text', 'Nova Transação')
         
         var finance = {
             descricao: 'compras',
-            valor: '-800',
+            valor: '800',
             data: '2022-01-10'
         }
 
@@ -23,8 +24,7 @@ describe('Transacao', ()=>{
 
     })
 
-    describe('Transacao 2', ()=>{
-        it('Adicionar uma nova transacao', ()=>{
+        it('Adiciona um valor negativo', ()=>{
             cy.get('[class="button new"]').click()
             cy.get('#form h2').should('have.text', 'Nova Transação')
             
@@ -40,7 +40,6 @@ describe('Transacao', ()=>{
             cy.get('#form button').click()
     
         })
-        describe('Transacao 3', ()=>{
             it('Adicionar uma nova transacao', ()=>{
                 cy.get('[class="button new"]').click()
                 cy.get('#form h2').should('have.text', 'Nova Transação')
@@ -58,8 +57,22 @@ describe('Transacao', ()=>{
                 cy.get('#form button').click()
         
             })
-               
-        })
-    })
-})
-})
+
+            
+            it('Edita uma transacao', ()=>{
+                cy.get('tr[data-index="0"]')
+                cy.get('[alt="Editar transação"]')
+                cy.get('.data-table-edit').focus()
+                  // .should('be.visible') .focus()
+                   //.wait(500)
+                   //.contains('.modal-overlay.active')
+                  
+                //cy.wait(500)
+                //cy.contains('[div.modal-overlay]').click('active');
+               // cy.get('[#form]', { timeout: 500 })
+        //.find('input')
+        //.click()
+            })      
+              
+})          
+        

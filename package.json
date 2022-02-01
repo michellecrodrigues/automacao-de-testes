@@ -9,6 +9,6 @@
   "author": "Michelle Passos",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^9.2.1"
+    "cypress": "^9.3.1"
   }
 }
