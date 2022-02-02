@@ -1,100 +1,76 @@
+import DevFinance from '../pages/DevFinance'
 
 describe('dev finance homepage', () => {
+
     it('Viewing the main page', () => {
-        cy.viewport(1440, 900)
-        cy.visit('https://maratona-discover-devfinance.netlify.app/#.')
+        var devFi = new DevFinance()
+        devFi.go()
     })
 
     it('Add output value', () => {
-        cy.get('[class="button new"]').click()
-        cy.get('#form h2').should('have.text', 'Nova Transação')
 
+        
         var finance = {
-            descricao: 'compras',
+
+            descricao: 'Boleto',
             valor: '-800',
             data: '2022-01-10'
-        }
-
-        cy.get('input[name="description"]').type(finance.descricao)
-        cy.get('input[name="amount"]').type(finance.valor)
-        cy.get('input[name="date"]').type(finance.data)
-        cy.get('#form button').click()
-
+        
+        }    
+        
+        var devFi = new DevFinance()
+        devFi.outputValue(finance)
+        
     })
 
     it('Positive balance entry', () => {
-        cy.get('[class="button new"]').click()
-        cy.get('#form h2').should('have.text', 'Nova Transação')
 
-        var finance = {
-            descricao: 'conta de energia',
-            valor: '1000',
-            data: '2021-12-30'
+        var finance2 = {
+            descricao2: 'conta de energia',
+            valor2: '1000',
+            data2: '2021-12-30'
         }
-
-        cy.get('input[name="description"]').type(finance.descricao)
-        cy.get('input[name="amount"]').type(finance.valor)
-        cy.get('input[name="date"]').type(finance.data)
-        cy.get('#form button').click()
+        var devFi = new DevFinance()
+        devFi.balaceEntry(finance2)
 
     })
+    
     it('Add output value', () => {
-        cy.get('[class="button new"]').click()
-        cy.get('#form h2').should('have.text', 'Nova Transação', 'compras')
 
-
-        var finance = {
-            descricao: 'Valor em caixa',
-            valor: '-500',
-            data: '2022-01-05'
+        var finance3 = {
+            descricao3: 'Valor em caixa',
+            valor3: '-500',
+            data3: '2022-01-05'
         }
 
-        cy.get('input[name="description"]').type(finance.descricao)
-        cy.get('input[name="amount"]').type(finance.valor)
-        cy.get('input[name="date"]').type(finance.data)
-        cy.get('#form button').click()
+        var devFi = new DevFinance()
+        devFi.outValue(finance3)
 
     })
 
     it('Perform registry change', () => {
-        cy.get('tr[data-index="0"]')
-            .get('.data-table__description')
-            .get('.data-table__price-income')
-            .get('.data-table__date')
-            .get('[onclick="Transaction.edit(0)"]').click({ multiple: true })
 
-        var finance = {
-            descricao: 'Uber',
-            valor: '-200',
-            data: '2022-01-22'
+        var finance4 = {
+            descricao4: 'Uber',
+            valor4: '-200',
+            data4: '2022-01-22'
         }
 
-        cy.get('input[name="description"]').clear(finance.descricao)
-        cy.get('input[name="description"]').type(finance.descricao)
-        cy.get('input[name="amount"]').clear(finance.valor)
-        cy.get('input[name="amount"]').type(finance.valor)
-        cy.get('input[name="date"]').clear(finance.data)
-        cy.get('input[name="date"]').type(finance.data)
-        cy.get('#form button').click()
-
-
+        var devFi = new DevFinance()
+        devFi.change(finance4)
 
     })
 
     it('Delete a record', () => {
 
-        cy.get('tr[data-index="2"]')
-            .get('.data-table__description')
-            .get('.data-table__price-income')
-            .get('.data-table__date')
-            .get('[onclick="Transaction.remove(2)"]').click({ multiple: true })
+        var devFi = new DevFinance()
+        devFi.delete()
 
     })
 
     it('Change application layout to dark', () => {
-        cy.get('.control-theme')
-          .get('.theme-switch-circle').click()
-      
+        var devFi = new DevFinance()
+        devFi.layout()
     })
 
 
