@@ -38,7 +38,8 @@ Para o desenvolvimento do projeto foi utilizado tecnologias adequadas ao context
 
 
 ## 💻 Aplicação
-Essas instruções fornecerão uma cópia do projeto instalado e funcionando em sua máquina local para fins de desenvolvimento e teste.
+Essas instruções fornecerão uma cópia do projeto instalado e funcionando em sua máquina local 
+para fins de desenvolvimento e teste.
 
 1º Passo - Clonar o respositório
 Comece clonando esse projeto para a sua máquina local.
