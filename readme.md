@@ -63,7 +63,8 @@ npm install --save-dev nodemon
 ```
 ```sh
 
-Depois de tudo configurado, é hora de rodar a nossa aplicação, para executá-la basta digitar o seguinte comando no terminal:
+Depois de tudo configurado, é hora de rodar a nossa aplicação, para executá-la basta 
+digitar o seguinte comando no terminal:
 ```
 ```sh
 
