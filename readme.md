@@ -17,13 +17,13 @@ A proposta desse projeto é desenvolver alguns casos de testes para mostrar meus
 
 ## 🎯 Cases
 
-Viewing the main page;
-Add output value negative;
-Positive balance entry;
-Add output value;
-Perform registry change;
-Delete a record;
-Change application layout to dark;
+Viewing the main page;<br>
+Add output value negative;<br>
+Positive balance entry;<br>
+Add output value;<br>
+Perform registry change;<br>
+Delete a record;<br>
+Change application layout to dark;<br>
 
 <div id='tecnologias'/>
 
