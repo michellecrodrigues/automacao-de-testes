@@ -1,66 +1,67 @@
 
 
 class DevFinance {
-    go(){
-        cy.viewport(1440, 900)
-        cy.visit('https://maratona-discover-devfinance.netlify.app/#.')
+    go() {
+        //cy.viewport(1440, 900)
+        cy.visit('/')
     }
 
-    outputValue(finance) {
-        cy.get('[class="button new"]').click()
+    outputValue(debt) {
+        
         cy.get('#form h2').should('have.text', 'Nova Transação')
+        cy.get('[class="button new"]').click()
 
-        cy.get('input[name="description"]').type(finance.descricao)
-        cy.get('input[name="amount"]').type(finance.valor)
-        cy.get('input[name="date"]').type(finance.data)
+        cy.get('input[name="description"]').type(debt.descricao,{multiple:true})
+        cy.get('input[name="amount"]').type(debt.valor)
+        cy.get('input[name="date"]').type(debt.data)
         cy.get('#form button').click()
     }
 
-    balaceEntry(finance2) {
+    balaceEntry(entry) {
         cy.get('[class="button new"]').click()
         cy.get('#form h2').should('have.text', 'Nova Transação')
 
-        cy.get('input[name="description"]').type(finance2.descricao2)
-        cy.get('input[name="amount"]').type(finance2.valor2)
-        cy.get('input[name="date"]').type(finance2.data2)
+        cy.get('input[name="description"]').type(entry.descricao)
+        cy.get('input[name="amount"]').type(entry.valor)
+        cy.get('input[name="date"]').type(entry.data)
         cy.get('#form button').click()
     }
 
-    outValue(finance3) {
+    outValue(output_value) {
         cy.get('[class="button new"]').click()
         cy.get('#form h2').should('have.text', 'Nova Transação', 'compras')
 
-        cy.get('input[name="description"]').type(finance3.descricao3)
-        cy.get('input[name="amount"]').type(finance3.valor3)
-        cy.get('input[name="date"]').type(finance3.data3)
+        cy.get('input[name="description"]').type(output_value.descricao)
+        cy.get('input[name="amount"]').type(output_value.valor)
+        cy.get('input[name="date"]').type(output_value.data)
         cy.get('#form button').click()
     }
-    change(finance4) {
+    change(change) {
         cy.get('tr[data-index="0"]')
             .get('.data-table__description')
             .get('.data-table__price-income')
             .get('.data-table__date')
             .get('[onclick="Transaction.edit(0)"]').click({ multiple: true })
 
-            cy.get('input[name="description"]').clear(finance4.descricao4)
-            cy.get('input[name="description"]').type(finance4.descricao4)
-            cy.get('input[name="amount"]').clear(finance4.valor4)
-            cy.get('input[name="amount"]').type(finance4.valor4)
-            cy.get('input[name="date"]').clear(finance4.data4)
-            cy.get('input[name="date"]').type(finance4.data4)
-            cy.get('#form button').click()
+        cy.get('input[name="description"]').clear(change.descricao)
+        cy.get('input[name="description"]').type(change.descricao)
+        cy.get('input[name="amount"]').clear(change.valor)
+        cy.get('input[name="amount"]').type(change.valor)
+        cy.get('input[name="date"]').clear(change.data)
+        cy.get('input[name="date"]').type(change.data)
+        cy.get('#form button').click()
     }
-    delete(){
+    delete() {
         cy.get('tr[data-index="2"]')
-          .get('.data-table__description')
-          .get('.data-table__price-income')
-          .get('.data-table__date')
-          .get('[onclick="Transaction.remove(2)"]').click({ multiple: true })
+            .get('.data-table__description')
+            .get('.data-table__price-income')
+            .get('.data-table__date')
+            .get('[onclick="Transaction.remove(2)"]').click({ multiple: true })
     }
 
-    layout(){
+    layout() {
         cy.get('.control-theme')
-          .get('.theme-switch-circle').click()
+            .get('.theme-switch-circle').click()
     }
 }
 export default DevFinance;
