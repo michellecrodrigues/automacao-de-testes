@@ -1,7 +1,7 @@
 ># 🏪 Projeto Finance
 
 * [Introdução](#introducao)
-* [Scenarios](#scenarios)
+* [Scenarios](#Scenarios)
 * [Tecnologias Utilizadas](#tecnologias)
 * [Aplicação](#aplicacao)
 
@@ -15,7 +15,7 @@ A proposta desse projeto é desenvolver alguns casos de testes para mostrar meus
 
 <div id='cases'/>
 
-## 🎯 scenarios
+## 🎯 Scenarios
 
 Viewing the main page;<br>
 Add output value negative;<br>
